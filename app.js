@@ -26,8 +26,8 @@ app.get('/', async(req, res) => {
     } catch (error) {
         
     }
-    console.log(item);
-    res.json(item);
+    // console.log(item);
+    // res.json(item);
 });
 
 
