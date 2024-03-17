@@ -17,31 +17,38 @@ app.use(express.json())
 
 const client = new ConvexHttpClient(process.env["CONVEX_URL"]);
 // client.query(api.task.get).then();
-app.get('/items', async(req, res) => {
-    let item = await client.query(api.task.get)
+app.get('/', async(req, res) => {
+    try {
+        let item = await client.query(api.task.get)
+
+        res.status(201).json({ message: 'Items fetched successfully',data:item });
+
+    } catch (error) {
+        
+    }
     console.log(item);
-    res.json(item)
+    res.json(item);
 });
-//  app.route({
-//     path: "/message",
-//     method: "POST",
-//     handler: httpAction(async ({ runMutation }, request) => {
-//       const { author, body } = await request.json();
- 
-//       await runMutation(api.task.create, { body, author });
-//       return new Response(null, {
-//         status: 200,
-//       });
-//     })
-//   });
+
+
+
+app.get('/:id',async(req,res)=>{
+    const id = req.params.id
+    try {
+        let item = await client.query(api.task.getByid,{id})
+console.log(item);
+        res.status(201).json({ message: 'Item fetch successfully',data:item });
+
+    } catch (error) {
+        
+    }
+
+})
 app.post('/create',async(req,res)=>{
 
     try {
-
-        
-        // Perform mutation logic here
-        await client.mutation(api.task.create,{text:"bijon",isCompleted:true});
-        res.status(201).json({ message: 'Item created successfully' });
+       const result =  await client.mutation(api.task.create,req.body);
+        res.status(201).json({ message: 'Item created successfully',data:result });
     } catch (error) {
         console.error('Error creating item:', error);
         res.status(500).json({ error: 'Internal Server Error' });

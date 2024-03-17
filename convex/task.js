@@ -7,6 +7,20 @@ export const get = query({
     return await ctx.db.query("tasks").collect();
   },
 });
+
+export const getByid = query({
+    args:{
+        id:v.string()
+    },
+    handler:async(ctx,args)=>{
+        console.log(args);
+        const result = await ctx.db.query('tasks')
+        .filter((q)=>q.eq(q.field('_id'),args.id))
+        .collect()
+console.log(result);
+        return result
+    }
+})
 export const create= mutation({
     
     args:{
