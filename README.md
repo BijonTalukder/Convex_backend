@@ -84,8 +84,7 @@ ROOT URL: `http://localhost:3000`
 -   **Body:** ```json{
     "text":"created new data",
     "isCompleted":true
-}
-    ```
+}```
     <br>
 
 
