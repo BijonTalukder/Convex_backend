@@ -81,9 +81,7 @@ ROOT URL: `http://localhost:3000`
 -   **Endpoint:** `/create`
 -   **Method:** `POST`
 -   **Description:** create new data in database
--   **Body:**
-    ```json
-{
+-   **Body:** ```json{
     "text":"created new data",
     "isCompleted":true
 }
