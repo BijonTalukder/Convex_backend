@@ -21,7 +21,7 @@ ROOT URL: `http://localhost:3000`
 -   **Endpoint:** `/`
 -   **Method:** `GET`
 -   **Description:** fetch all items.
--   **Response:
+-   **Response:** 
     ```javascript {
     "message": "Items fetched successfully",
     "data": [
@@ -66,7 +66,7 @@ ROOT URL: `http://localhost:3000`
 - **Endpoint:** `/123`
 - **Method:** `GET`
 - **Description:** Fetch only single data.
-- **Response:
+- **Response:**
    ```javascript {
     "message": "Item fetch successfully",
     "data": [
@@ -77,20 +77,17 @@ ROOT URL: `http://localhost:3000`
             "text": "a"
         }
     ]
-}  
-```
+}  ```
+  <br><br>
 ### insert new data
-
--   **Endpoint:** `/create`
+- **Endpoint:** `/create`
 -   **Method:** `POST`
 -   **Description:** create new data in database
--   **Body:
- ```
-javascript{
+-   **Body:**
+ ```javascript{
     "text":"created new data",
     "isCompleted":true
-}
-```
+} ```
     <br>
 
 
