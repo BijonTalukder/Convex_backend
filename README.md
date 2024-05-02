@@ -21,7 +21,7 @@ ROOT URL: `http://localhost:3000`
 -   **Endpoint:** `/`
 -   **Method:** `GET`
 -   **Description:** fetch all items.
--   **Response:** ```json {
+-   **Response:** ```json{
     "message": "Items fetched successfully",
     "data": [
         {
